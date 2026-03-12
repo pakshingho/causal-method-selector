@@ -1,6 +1,6 @@
-# Causal Inference Method Selector
+# Via Causa
 
-Standalone static web app for choosing causal inference methods from study design, identification structure, and business goal. It preserves the current selector logic, references, responsive overview diagrams, switchback support, shareable query-string state, and exportable robustness checklists from the original portfolio-site version.
+Via Causa is a standalone static web app for choosing causal inference methods from study design, identification structure, and business goal. It preserves the current selector logic, references, responsive overview diagrams, switchback support, shareable query-string state, and exportable robustness checklists from the original portfolio-site version.
 
 ## Project Structure
 

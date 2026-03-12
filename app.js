@@ -1727,7 +1727,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     lines.push("");
-    lines.push("Generated from the standalone causal inference method selector.");
+    lines.push("Generated from Via Causa.");
     return lines.join("\n");
   }
 

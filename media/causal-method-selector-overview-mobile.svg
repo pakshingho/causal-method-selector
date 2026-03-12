@@ -24,7 +24,7 @@
   </defs>
 
   <rect class="bg" x="0" y="0" width="960" height="1980" rx="34" />
-  <text class="headline" x="56" y="78">Causal Method Selector</text>
+  <text class="headline" x="56" y="78">Via Causa</text>
   <text class="headline" x="56" y="130">Overview Map</text>
   <text class="small" x="56" y="182">
     <tspan x="56" dy="0">Start with identification structure. Then choose an estimator family</tspan>
