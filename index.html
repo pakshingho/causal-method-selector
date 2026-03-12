@@ -15,10 +15,11 @@
       <h1>Via Causa</h1>
       <p class="hero__lede causal-tool__subtitle" role="doc-subtitle">Interactive guide to causal inference methods</p>
       <div class="hero__epigraph">
-        <button type="button" class="hero__quote-button" id="hero-quote-toggle" aria-expanded="false" aria-controls="hero-quote-details">
+        <input class="hero__quote-toggle" type="checkbox" id="hero-quote-toggle">
+        <label class="hero__quote-button" for="hero-quote-toggle">
           <span class="hero__quote-text" lang="la">“Causa causae est causa causati.”</span>
-        </button>
-        <div class="hero__quote-details" id="hero-quote-details" hidden>
+        </label>
+        <div class="hero__quote-details">
           <p>The cause of a cause is the cause of the effect. Causal effects often propagate through pathways, not only direct links. Correlation alone is not enough to establish causation.</p>
         </div>
       </div>
