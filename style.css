@@ -115,6 +115,12 @@ a:focus-visible {
   text-align: center;
 }
 
+.hero__quote-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .hero__quote-button {
   display: block;
   width: 100%;
@@ -144,6 +150,19 @@ a:focus-visible {
 .hero__quote-details {
   margin-top: 0.8rem;
   color: var(--muted);
+}
+
+.hero__quote-details[hidden] {
+  display: none !important;
+}
+
+/* Compatibility guard for briefly cached HTML from the checkbox-based version. */
+.hero__quote-toggle + .hero__quote-button + .hero__quote-details {
+  display: none;
+}
+
+.hero__quote-toggle:checked + .hero__quote-button + .hero__quote-details {
+  display: block;
 }
 
 .hero__quote-details p {
