@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="920" viewBox="0 0 1500 920" preserveAspectRatio="xMidYMin meet" role="img" aria-labelledby="title desc">
+  <title id="title">Causal method selector overview</title>
+  <desc id="desc">An overview flowchart for choosing a causal inference method across experimental and observational settings, with branches for randomization, CUPED, compliance, heterogeneity, mediation, regression discontinuity, instrumental variables, panel rollout, synthetic control, and adjustment on observed confounders.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .panel { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; rx: 20; }
+      .root { fill: #e0f2fe; stroke: #0284c7; stroke-width: 2.5; rx: 28; }
+      .exp { fill: #eef2ff; stroke: #4f46e5; stroke-width: 2; rx: 24; }
+      .obs { fill: #ecfdf5; stroke: #059669; stroke-width: 2; rx: 24; }
+      .nodeBlue { fill: #eff6ff; stroke: #60a5fa; stroke-width: 2; rx: 18; }
+      .nodeTeal { fill: #ecfeff; stroke: #14b8a6; stroke-width: 2; rx: 18; }
+      .nodeAmber { fill: #fffbeb; stroke: #f59e0b; stroke-width: 2; rx: 18; }
+      .nodeRose { fill: #fff1f2; stroke: #fb7185; stroke-width: 2; rx: 18; }
+      .nodeSlate { fill: #f8fafc; stroke: #64748b; stroke-width: 2; rx: 18; }
+      .headline { font: 700 34px 'Helvetica Neue', Arial, sans-serif; fill: #0f172a; }
+      .section { font: 700 23px 'Helvetica Neue', Arial, sans-serif; fill: #0f172a; }
+      .label { font: 700 18px 'Helvetica Neue', Arial, sans-serif; fill: #0f172a; }
+      .labelSmall { font: 700 16px 'Helvetica Neue', Arial, sans-serif; fill: #0f172a; }
+      .text { font: 15.5px 'Helvetica Neue', Arial, sans-serif; fill: #334155; }
+      .small { font: 14.5px 'Helvetica Neue', Arial, sans-serif; fill: #475569; }
+      .arrow { stroke: #475569; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+      .guide { stroke: #cbd5e1; stroke-width: 2; fill: none; stroke-dasharray: 8 8; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#475569" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1500" height="920" rx="34" />
+  <text class="headline" x="60" y="64">Causal Method Selector: Overview Map</text>
+  <text class="text" x="60" y="100">Start with identification structure. Then choose an estimator family and a robustness plan.</text>
+
+  <rect class="root" x="440" y="120" width="620" height="124" rx="28" />
+  <text class="label" x="750" y="166" text-anchor="middle">What identifies the causal effect?</text>
+  <text class="text" x="750" y="196" text-anchor="middle">
+    <tspan x="750" dy="0">Random assignment, policy timing, threshold, instrument,</tspan>
+    <tspan x="750" dy="22">or adjustment on observed confounders</tspan>
+  </text>
+
+  <path class="arrow" d="M 660 244 L 470 308" />
+  <path class="arrow" d="M 840 244 L 1030 308" />
+
+  <rect class="exp" x="80" y="308" width="580" height="514" rx="24" />
+  <text class="section" x="120" y="352">
+    <tspan x="120" dy="0">Experimental or</tspan>
+    <tspan x="120" dy="28">randomized data</tspan>
+  </text>
+  <text class="small" x="120" y="410">
+    <tspan x="120" dy="0">Experimental branch: start with design validity, then choose</tspan>
+    <tspan x="120" dy="20">precision or compliance tools.</tspan>
+  </text>
+
+  <rect class="nodeBlue" x="120" y="460" width="210" height="116" rx="18" />
+  <text class="label" x="225" y="498" text-anchor="middle">Valid randomization</text>
+  <text class="text" x="225" y="526" text-anchor="middle">
+    <tspan x="225" dy="0">ITT / covariate-adjusted</tspan>
+    <tspan x="225" dy="22">experiment analysis</tspan>
+  </text>
+
+  <rect class="nodeTeal" x="400" y="460" width="210" height="116" rx="18" />
+  <text class="label" x="505" y="498" text-anchor="middle">Pre-period outcome</text>
+  <text class="text" x="505" y="526" text-anchor="middle">
+    <tspan x="505" dy="0">CUPED / ANCOVA for</tspan>
+    <tspan x="505" dy="22">variance reduction</tspan>
+  </text>
+
+  <rect class="nodeAmber" x="120" y="610" width="210" height="116" rx="18" />
+  <text class="label" x="225" y="648" text-anchor="middle">Noncompliance</text>
+  <text class="text" x="225" y="676" text-anchor="middle">
+    <tspan x="225" dy="0">CACE / IV using</tspan>
+    <tspan x="225" dy="22">assignment as instrument</tspan>
+  </text>
+
+  <rect class="nodeRose" x="400" y="610" width="210" height="116" rx="18" />
+  <text class="label" x="505" y="644" text-anchor="middle">
+    <tspan x="505" dy="0">Heterogeneous</tspan>
+    <tspan x="505" dy="22">effects</tspan>
+  </text>
+  <text class="text" x="505" y="688" text-anchor="middle">
+    <tspan x="505" dy="0">causal forest, uplift,</tspan>
+    <tspan x="505" dy="22">meta-learners</tspan>
+  </text>
+
+  <rect class="nodeSlate" x="230" y="748" width="280" height="56" rx="18" />
+  <text class="labelSmall" x="370" y="770" text-anchor="middle">
+    <tspan x="370" dy="0">Mediation / mechanism</tspan>
+    <tspan x="370" dy="20">analysis</tspan>
+  </text>
+
+  <path class="guide" d="M 370 460 L 370 804" />
+
+  <rect class="obs" x="840" y="308" width="580" height="514" rx="24" />
+  <text class="section" x="880" y="352">
+    <tspan x="880" dy="0">Observational or</tspan>
+    <tspan x="880" dy="28">non-randomized data</tspan>
+  </text>
+  <text class="small" x="880" y="410">
+    <tspan x="880" dy="0">Observational branch: search for quasi-experimental structure</tspan>
+    <tspan x="880" dy="20">before selection-on-observables methods.</tspan>
+  </text>
+
+  <rect class="nodeAmber" x="900" y="460" width="230" height="116" rx="18" />
+  <text class="label" x="1015" y="498" text-anchor="middle">Threshold or cutoff</text>
+  <text class="text" x="1015" y="526" text-anchor="middle">
+    <tspan x="1015" dy="0">Regression discontinuity</tspan>
+    <tspan x="1015" dy="22">around the boundary</tspan>
+  </text>
+
+  <rect class="nodeBlue" x="1170" y="460" width="210" height="116" rx="18" />
+  <text class="label" x="1275" y="498" text-anchor="middle">Instrument</text>
+  <text class="text" x="1275" y="526" text-anchor="middle">
+    <tspan x="1275" dy="0">IV / natural experiment</tspan>
+    <tspan x="1275" dy="22">with exclusion story</tspan>
+  </text>
+
+  <rect class="nodeTeal" x="900" y="610" width="230" height="116" rx="18" />
+  <text class="label" x="1015" y="648" text-anchor="middle">Panel rollout</text>
+  <text class="text" x="1015" y="676" text-anchor="middle">
+    <tspan x="1015" dy="0">DiD / event study</tspan>
+    <tspan x="1015" dy="22">with pre-trend checks</tspan>
+  </text>
+
+  <rect class="nodeRose" x="1170" y="610" width="210" height="116" rx="18" />
+  <text class="label" x="1275" y="648" text-anchor="middle">Single treated unit</text>
+  <text class="text" x="1275" y="676" text-anchor="middle">
+    <tspan x="1275" dy="0">Synthetic control</tspan>
+    <tspan x="1275" dy="22">or interrupted time series</tspan>
+  </text>
+
+  <rect class="nodeSlate" x="980" y="736" width="300" height="82" rx="18" />
+  <text class="labelSmall" x="1130" y="760" text-anchor="middle">
+    <tspan x="1130" dy="0">Observed confounders</tspan>
+    <tspan x="1130" dy="20">plus overlap</tspan>
+  </text>
+  <text class="text" x="1130" y="802" text-anchor="middle">Matching, IPTW, AIPW, DML</text>
+
+  <path class="guide" d="M 1150 460 L 1150 818" />
+
+  <rect class="panel" x="430" y="842" width="640" height="60" rx="16" />
+  <text class="small" x="750" y="867" text-anchor="middle">
+    <tspan x="750" dy="0">If none of these structures hold, redesign, collect better covariates,</tspan>
+    <tspan x="750" dy="18">or run sensitivity analysis.</tspan>
+  </text>
+</svg>
