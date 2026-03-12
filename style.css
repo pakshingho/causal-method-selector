@@ -116,46 +116,44 @@ a:focus-visible {
 }
 
 .hero__quote {
+  display: block;
+  width: 100%;
   margin: 0;
   font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   font-size: clamp(1.08rem, 2vw, 1.32rem);
   font-style: italic;
   line-height: 1.45;
   color: #334155;
+  text-align: center;
+  cursor: pointer;
+  list-style: none;
 }
 
-.hero__quote-translation {
-  margin: 0.45rem 0 0;
-  color: var(--muted);
-  font-size: 0.96rem;
+.hero__quote::-webkit-details-marker {
+  display: none;
 }
 
-.hero__quote-notes {
+.hero__quote::marker {
+  content: "";
+}
+
+.hero__quote:hover,
+.hero__quote:focus-visible {
+  color: #1e293b;
+}
+
+.hero__quote-details {
   margin-top: 0.8rem;
   color: var(--muted);
 }
 
-.hero__quote-notes summary {
-  display: inline-block;
-  cursor: pointer;
-  font-size: 0.94rem;
-  font-weight: 600;
-  list-style: none;
+.hero__quote-details .hero__quote-translation {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
 }
 
-.hero__quote-notes summary::-webkit-details-marker {
-  display: none;
-}
-
-.hero__quote-notes summary::after {
-  content: " +";
-}
-
-.hero__quote-notes[open] summary::after {
-  content: " -";
-}
-
-.hero__quote-notes p {
+.hero__quote-details p {
   margin: 0.6rem 0 0;
   font-size: 0.94rem;
 }
