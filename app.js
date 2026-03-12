@@ -1596,6 +1596,44 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 2200);
   }
 
+  function fallbackCopyText(text) {
+    var textarea = document.createElement("textarea");
+    var copied = false;
+
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.setAttribute("aria-hidden", "true");
+    textarea.style.position = "fixed";
+    textarea.style.top = "-9999px";
+    textarea.style.left = "-9999px";
+
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+    textarea.setSelectionRange(0, textarea.value.length);
+
+    try {
+      copied = document.execCommand("copy");
+    } catch (error) {
+      copied = false;
+    }
+
+    document.body.removeChild(textarea);
+    return copied;
+  }
+
+  function copyShareableLink(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) {
+      return navigator.clipboard.writeText(text).then(function () {
+        return true;
+      }).catch(function () {
+        return fallbackCopyText(text);
+      });
+    }
+
+    return Promise.resolve(fallbackCopyText(text));
+  }
+
   function slugify(text) {
     return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   }
@@ -1748,15 +1786,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   shareButton.addEventListener("click", function () {
     var url = window.location.href;
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(url).then(function () {
+    copyShareableLink(url).then(function (copied) {
+      if (copied) {
         setTransientStatus("Link copied.");
-      }).catch(function () {
-        outputs.shareStatus.textContent = url;
-      });
-    } else {
-      outputs.shareStatus.textContent = url;
-    }
+        return;
+      }
+      outputs.shareStatus.textContent = "Copy this link: " + url;
+    });
   });
 
   resetButton.addEventListener("click", function () {
