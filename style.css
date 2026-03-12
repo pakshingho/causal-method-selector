@@ -109,6 +109,57 @@ a:focus-visible {
   max-width: 58rem;
 }
 
+.hero__epigraph {
+  max-width: 42rem;
+  margin: 1.15rem auto 1.2rem;
+  text-align: center;
+}
+
+.hero__quote {
+  margin: 0;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: clamp(1.08rem, 2vw, 1.32rem);
+  font-style: italic;
+  line-height: 1.45;
+  color: #334155;
+}
+
+.hero__quote-translation {
+  margin: 0.45rem 0 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.hero__quote-notes {
+  margin-top: 0.8rem;
+  color: var(--muted);
+}
+
+.hero__quote-notes summary {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 0.94rem;
+  font-weight: 600;
+  list-style: none;
+}
+
+.hero__quote-notes summary::-webkit-details-marker {
+  display: none;
+}
+
+.hero__quote-notes summary::after {
+  content: " +";
+}
+
+.hero__quote-notes[open] summary::after {
+  content: " -";
+}
+
+.hero__quote-notes p {
+  margin: 0.6rem 0 0;
+  font-size: 0.94rem;
+}
+
 .hero__copy {
   max-width: 64rem;
   margin: 0;
