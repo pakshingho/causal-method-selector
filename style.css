@@ -115,20 +115,18 @@ a:focus-visible {
   text-align: center;
 }
 
-.hero__quote {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.hero__quote-button {
+  display: block;
   width: 100%;
   margin: 0;
   padding: 0;
-  text-align: center;
+  border: 0;
+  background: transparent;
   cursor: pointer;
-  list-style: none;
 }
 
 .hero__quote-text {
-  display: inline-block;
+  display: block;
   max-width: 100%;
   font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   font-size: clamp(1.08rem, 2vw, 1.32rem);
@@ -138,16 +136,8 @@ a:focus-visible {
   text-align: center;
 }
 
-.hero__quote::-webkit-details-marker {
-  display: none;
-}
-
-.hero__quote::marker {
-  content: "";
-}
-
-.hero__quote:hover .hero__quote-text,
-.hero__quote:focus-visible .hero__quote-text {
+.hero__quote-button:hover .hero__quote-text,
+.hero__quote-button:focus-visible .hero__quote-text {
   color: #1e293b;
 }
 

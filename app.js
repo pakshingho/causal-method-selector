@@ -1,7 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
   var tool = document.getElementById("causal-tool");
+  var quoteToggle = document.getElementById("hero-quote-toggle");
+  var quoteDetails = document.getElementById("hero-quote-details");
   if (!tool) {
     return;
+  }
+
+  if (quoteToggle && quoteDetails) {
+    quoteToggle.addEventListener("click", function () {
+      var expanded = quoteToggle.getAttribute("aria-expanded") === "true";
+      quoteToggle.setAttribute("aria-expanded", expanded ? "false" : "true");
+      quoteDetails.hidden = expanded;
+    });
   }
 
   var GOAL_OPTIONS = {
