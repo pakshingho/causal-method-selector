@@ -115,19 +115,14 @@ a:focus-visible {
   text-align: center;
 }
 
-.hero__quote-toggle {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
 .hero__quote-button {
   display: block;
   width: 100%;
   margin: 0;
   padding: 0;
+  border: 0;
+  background: transparent;
   cursor: pointer;
-  text-decoration: none;
 }
 
 .hero__quote-text {
@@ -147,13 +142,8 @@ a:focus-visible {
 }
 
 .hero__quote-details {
-  display: none;
   margin-top: 0.8rem;
   color: var(--muted);
-}
-
-.hero__quote-toggle:checked + .hero__quote-button + .hero__quote-details {
-  display: block;
 }
 
 .hero__quote-details p {
